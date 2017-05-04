@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SarvanComponent } from './sarvan/sarvan.component';
 
 const appRoutes: Routes = [
   { path: 'crisis-center', component: CrisisListComponent },
   { path: 'heroes', component: HeroListComponent, data: { title: 'Heroes List' } },
+  { path: 'sarvan', component: SarvanComponent },
   { path: '',   redirectTo: '/heroes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     CrisisListComponent,
     HeroListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SarvanComponent
   ],
   imports: [
     BrowserModule,
