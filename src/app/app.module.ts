@@ -8,12 +8,16 @@ import { AppComponent } from './app.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AjModuleHomeComponent } from './aj-module-home/aj-module-home.component';
 import { SarvanComponent } from './sarvan/sarvan.component';
+import { AnanthCompComponent } from './ananth-comp/ananth-comp.component';
 
 const appRoutes: Routes = [
   { path: 'crisis-center', component: CrisisListComponent },
   { path: 'heroes', component: HeroListComponent, data: { title: 'Heroes List' } },
+     { path: 'AjModules', component: AjModuleHomeComponent },
   { path: 'sarvan', component: SarvanComponent },
+  { path: 'ananth', component: AnanthCompComponent },
   { path: '',   redirectTo: '/heroes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -25,7 +29,9 @@ const appRoutes: Routes = [
     CrisisListComponent,
     HeroListComponent,
     PageNotFoundComponent,
-    SarvanComponent
+    AjModuleHomeComponent,
+    SarvanComponent,
+    AnanthCompComponent
   ],
   imports: [
     BrowserModule,
