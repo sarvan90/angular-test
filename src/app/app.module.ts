@@ -29,7 +29,7 @@ const appRoutes: Routes = [
     CrisisListComponent,
     HeroListComponent,
     PageNotFoundComponent,
-    AjModuleHomeComponent
+    AjModuleHomeComponent,
     AnanthCompComponent
   ],
   imports: [
