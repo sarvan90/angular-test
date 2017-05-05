@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import {ModuleAj2Module} from './module-aj2/module-aj2.module';
 
 import { AppComponent } from './app.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
@@ -13,6 +14,7 @@ import { SarvanComponent } from './sarvan/sarvan.component';
 import { AnanthCompComponent } from './ananth-comp/ananth-comp.component';
 import { Layout1Component } from './layout1/layout1.component';
 
+
 const appRoutes: Routes = [
   { path: 'crisis-center', component: CrisisListComponent },
   { path: 'heroes', component: HeroListComponent, data: { title: 'Heroes List' } },
@@ -20,7 +22,9 @@ const appRoutes: Routes = [
   { path: 'sarvan', component: SarvanComponent },
   { path: 'ananth', component: AnanthCompComponent },
   { path: '',   redirectTo: '/heroes', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent },
+  //ModuleAj2RoutingModule
+
 ];
 
 
@@ -40,6 +44,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ModuleAj2Module,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
