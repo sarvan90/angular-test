@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { Layout1Component } from './layout1/layout1.component';
 
 const appRoutes: Routes = [
   { path: 'crisis-center', component: CrisisListComponent },
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
     AppComponent,
     CrisisListComponent,
     HeroListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    Layout1Component
   ],
   imports: [
     BrowserModule,
