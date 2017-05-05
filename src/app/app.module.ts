@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import {ModuleAj2Module} from './module-aj2/module-aj2.module';
+//import {LazyLoadModule} from './lazy-load/lazy-load.module';
 
 import { AppComponent } from './app.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
@@ -21,12 +22,13 @@ const appRoutes: Routes = [
      { path: 'AjModules', component: AjModuleHomeComponent },
   { path: 'sarvan', component: SarvanComponent },
   { path: 'ananth', component: AnanthCompComponent },
+  { path:'lazy', loadChildren:'app/lazy-load/lazy-load.module#LazyLoadModule'},
   { path: '',   redirectTo: '/heroes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
   //ModuleAj2RoutingModule
 
 ];
-
+ 
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     ModuleAj2Module,
+  //  LazyLoadModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
