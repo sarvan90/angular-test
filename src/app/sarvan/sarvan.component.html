@@ -1,3 +1,9 @@
 <p>
   sarvan works!
 </p>
+
+<ul>
+  <li *ngFor="let i of list" (click)="onSelect(i)">
+    <a href="javascript:void(0)">goto param page implicit {{i}}</a>
+    <a routerLink="/heroes/{{i}}" routerLinkActive="active">goto param page explicit {{i}}</a></li>
+</ul>

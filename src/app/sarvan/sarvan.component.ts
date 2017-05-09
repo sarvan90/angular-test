@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sarvan',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sarvan.component.css']
 })
 export class SarvanComponent implements OnInit {
-
-  constructor() { }
+  list = [1,2,3,4,5];
+  
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onSelect(i){
+    this.router.navigate(['/heroes',i]);
   }
 
 }

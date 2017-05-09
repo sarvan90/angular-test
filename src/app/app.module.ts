@@ -18,7 +18,7 @@ import { Layout1Component } from './layout1/layout1.component';
 
 const appRoutes: Routes = [
   { path: 'crisis-center', component: CrisisListComponent },
-  { path: 'heroes', component: HeroListComponent, data: { title: 'Heroes List' } },
+  { path: 'heroes/:id', component: HeroListComponent, data: { title: 'Heroes List' } },
      { path: 'AjModules', component: AjModuleHomeComponent },
   { path: 'sarvan', component: SarvanComponent },
   { path: 'ananth', component: AnanthCompComponent },
