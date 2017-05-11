@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import {ModuleAj2Module} from './module-aj2/module-aj2.module';
 //import {LazyLoadModule} from './lazy-load/lazy-load.module';
@@ -48,7 +48,7 @@ const appRoutes: Routes = [
     HttpModule,
     ModuleAj2Module,
   //  LazyLoadModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules })
   ],
   providers: [],
   bootstrap: [AppComponent]
