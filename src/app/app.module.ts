@@ -5,6 +5,8 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import {ModuleAj2Module} from './module-aj2/module-aj2.module';
 //import {LazyLoadModule} from './lazy-load/lazy-load.module';
+import {RoutingRecapModule} from './routing-recap/routing-recap.module';
+//  import {LazyRecapModule} from './lazy-recap/lazy-recap.module';
 
 import { AppComponent } from './app.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
@@ -15,18 +17,20 @@ import { SarvanComponent } from './sarvan/sarvan.component';
 import { AnanthCompComponent } from './ananth-comp/ananth-comp.component';
 import { Layout1Component } from './layout1/layout1.component';
 
+import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
+
 
 const appRoutes: Routes = [
   { path: 'crisis-center', component: CrisisListComponent },
   { path: 'heroes/:id', component: HeroListComponent, data: { title: 'Heroes List' } },
-     { path: 'AjModules', component: AjModuleHomeComponent },
+  { path: 'AjModules', component: AjModuleHomeComponent },
   { path: 'sarvan', component: SarvanComponent },
   { path: 'ananth', component: AnanthCompComponent },
-  { path:'lazy', loadChildren:'app/lazy-load/lazy-load.module#LazyLoadModule'},
+  { path: 'lazy', loadChildren:'app/lazy-load/lazy-load.module#LazyLoadModule' },
   { path: '',   redirectTo: '/heroes', pathMatch: 'full' },
+  {path: 'lazyRecapPath', loadChildren: 'app/lazy-recap/lazy-recap.module#LazyRecapModule', data: { preload: true }},
   { path: '**', component: PageNotFoundComponent },
   //ModuleAj2RoutingModule
-
 ];
  
 
@@ -48,9 +52,13 @@ const appRoutes: Routes = [
     HttpModule,
     ModuleAj2Module,
   //  LazyLoadModule,
-    RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules })
+    RoutingRecapModule,
+ // LazyRecapModule,
+    //RouterModule.forRoot(appRoutes)
+    //RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(appRoutes, { preloadingStrategy: SelectivePreloadingStrategyService })
   ],
-  providers: [],
+  providers: [ SelectivePreloadingStrategyService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
