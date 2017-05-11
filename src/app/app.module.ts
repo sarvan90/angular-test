@@ -7,6 +7,8 @@ import {ModuleAj2Module} from './module-aj2/module-aj2.module';
 //import {LazyLoadModule} from './lazy-load/lazy-load.module';
 import {RoutingRecapModule} from './routing-recap/routing-recap.module';
 //  import {LazyRecapModule} from './lazy-recap/lazy-recap.module';
+/* Commented for Lazy loading - no need to import*/
+//import {ModByAnanthModule} from './mod-by-ananth/mod-by-ananth.module';
 
 import { AppComponent } from './app.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
@@ -27,10 +29,10 @@ const appRoutes: Routes = [
   { path: 'lazy', loadChildren:'app/lazy-load/lazy-load.module#LazyLoadModule'},
   { path: '',   redirectTo: '/heroes', pathMatch: 'full' },
   {path: 'lazyRecapPath', loadChildren: 'app/lazy-recap/lazy-recap.module#LazyRecapModule'},
+  {path: 'compbyananth', loadChildren: 'app/mod-by-ananth/mod-by-ananth.module#ModByAnanthModule'},
   { path: '**', component: PageNotFoundComponent },
   //ModuleAj2RoutingModule
 ];
- 
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ const appRoutes: Routes = [
   //  LazyLoadModule,
   RoutingRecapModule,
  // LazyRecapModule,
+ /* Commented for Lazy loading*/
+// ModByAnanthModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
