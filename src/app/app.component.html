@@ -10,6 +10,7 @@
     <a routerLink="/routesRecapModulePath" routerLinkActive="inactive">Recap Routing</a>
     <a routerLink="/lazyRecapPath">Lazy Recap</a>
     <a routerLink="/compbyananth">Module by Ananth</a>
+       <a routerLink="/ajRoutingDemo">Aj Route Demo-very Lazy</a>
 
     
     
@@ -17,3 +18,7 @@
 
   <router-outlet></router-outlet>
 
+    Preloaded Modules
+    <ul>
+      <li *ngFor="let module of modules">{{ module }}</li>
+    </ul>

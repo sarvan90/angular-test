@@ -6,7 +6,7 @@ import {LazyComponent} from './lazy/lazy.component';
 const routes: Routes = [
   // {path:'', redirectTo:'lazy',pathMatch:'full'},
   // {path:'lazy', component:LazyComponent},
-  {path:'', component:LazyComponent}
+  {path: '', component:LazyComponent}
 ];
 
 @NgModule({
