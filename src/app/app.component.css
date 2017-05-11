@@ -2,3 +2,6 @@ a.active {
     color: red;
     background: yellow;
 }
+a.inactive{
+    color:green;
+}

@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import {ModuleAj2Module} from './module-aj2/module-aj2.module';
 //import {LazyLoadModule} from './lazy-load/lazy-load.module';
+import {RoutingRecapModule} from './routing-recap/routing-recap.module';
+//  import {LazyRecapModule} from './lazy-recap/lazy-recap.module';
 
 import { AppComponent } from './app.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
@@ -19,14 +21,14 @@ import { Layout1Component } from './layout1/layout1.component';
 const appRoutes: Routes = [
   { path: 'crisis-center', component: CrisisListComponent },
   { path: 'heroes/:id', component: HeroListComponent, data: { title: 'Heroes List' } },
-     { path: 'AjModules', component: AjModuleHomeComponent },
+  { path: 'AjModules', component: AjModuleHomeComponent },
   { path: 'sarvan', component: SarvanComponent },
   { path: 'ananth', component: AnanthCompComponent },
-  { path:'lazy', loadChildren:'app/lazy-load/lazy-load.module#LazyLoadModule'},
+  { path: 'lazy', loadChildren:'app/lazy-load/lazy-load.module#LazyLoadModule'},
   { path: '',   redirectTo: '/heroes', pathMatch: 'full' },
+  {path: 'lazyRecapPath', loadChildren: 'app/lazy-recap/lazy-recap.module#LazyRecapModule'},
   { path: '**', component: PageNotFoundComponent },
   //ModuleAj2RoutingModule
-
 ];
  
 
@@ -48,6 +50,8 @@ const appRoutes: Routes = [
     HttpModule,
     ModuleAj2Module,
   //  LazyLoadModule,
+  RoutingRecapModule,
+ // LazyRecapModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
