@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { AjModuleLayout1Component } from './aj-module-layout1.component';
 
@@ -8,7 +9,8 @@ describe('AjModuleLayout1Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AjModuleLayout1Component ]
+      declarations: [ AjModuleLayout1Component ],
+      imports: [RouterTestingModule]
     })
     .compileComponents();
   }));

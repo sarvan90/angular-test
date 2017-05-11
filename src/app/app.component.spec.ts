@@ -1,6 +1,11 @@
 import { TestBed, async } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
+
+import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
 
 import { AppComponent } from './app.component';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -8,6 +13,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [RouterTestingModule ],
+      providers: [SelectivePreloadingStrategyService ]
     }).compileComponents();
   }));
 
@@ -27,6 +34,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
+    expect(compiled.querySelector('h1').textContent).toContain('Angular Router Demo');
   }));
 });

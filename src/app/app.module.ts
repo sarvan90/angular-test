@@ -29,10 +29,10 @@ const appRoutes: Routes = [
   { path: 'sarvan', component: SarvanComponent },
   { path: 'ananth', component: AnanthCompComponent },
   { path: 'lazy', loadChildren:'app/lazy-load/lazy-load.module#LazyLoadModule' },
-  { path: '',   redirectTo: '/heroes', pathMatch: 'full' },
   {path: 'lazyRecapPath', loadChildren: 'app/lazy-recap/lazy-recap.module#LazyRecapModule', data: { preload: true }},
    {path:'ajRoutingDemo',loadChildren:'app/aj-route-demo/aj-route-demo.module#AjRouteDemoModule'},
   {path: 'compbyananth', loadChildren: 'app/mod-by-ananth/mod-by-ananth.module#ModByAnanthModule'},
+  { path: '',   redirectTo: '/heroes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
   //ModuleAj2RoutingModule
 ];
