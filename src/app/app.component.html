@@ -8,17 +8,16 @@
     <a routerLink="/ajRoute2Module" routerLinkActive="active">ajRoute2Module's List</a>
     <a routerLink="/lazy" routerLinkActive="active">lazy Load</a>
     <a routerLink="/routesRecapModulePath" routerLinkActive="inactive">Recap Routing</a>
-    <a routerLink="/lazyRecapPath">Lazy Recap</a>
-    <a routerLink="/compbyananth">Module by Ananth</a>
-       <a routerLink="/ajRoutingDemo">Aj Route Demo-very Lazy</a>
-
-    
-    
+    <a routerLink="/lazyRecapPath" routerLinkActive="active">Lazy Recap</a>
+    <a routerLink="/compbyananth" routerLinkActive="active">Module by Ananth</a>
+    <a routerLink="/ajRoutingDemo" routerLinkActive="active">Aj Route Demo-very Lazy</a>
+    <a routerLink="/item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Item List</a>
   </nav>
 
   <router-outlet></router-outlet>
-
+    <div [hidden]="true">
     Preloaded Modules
     <ul>
       <li *ngFor="let module of modules">{{ module }}</li>
     </ul>
+    </div>

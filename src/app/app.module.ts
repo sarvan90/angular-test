@@ -9,6 +9,7 @@ import {RoutingRecapModule} from './routing-recap/routing-recap.module';
 //  import {LazyRecapModule} from './lazy-recap/lazy-recap.module';
 /* Commented for Lazy loading - no need to import*/
 //import {ModByAnanthModule} from './mod-by-ananth/mod-by-ananth.module';
+import {ItemListModule} from './item-list/item-list.module';
 
 import { AppComponent } from './app.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
@@ -56,6 +57,7 @@ const appRoutes: Routes = [
     ModuleAj2Module,
   //  LazyLoadModule,
     RoutingRecapModule,
+    ItemListModule,
  // LazyRecapModule,
     //RouterModule.forRoot(appRoutes)
     //RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules }),

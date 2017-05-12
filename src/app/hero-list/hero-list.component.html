@@ -1,3 +1,9 @@
+
+<ul>
+  <li *ngFor="let i of list">
+    <a routerLink="/heroes/{{i}}" routerLinkActive="active">goto param page explicit {{i}}</a></li>
+</ul>
+
 <p>
   hero-list works!
   route data : {{routeData}}

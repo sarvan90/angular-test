@@ -1,7 +1,16 @@
-a.active {
+nav a.active {
     color: red;
     background: yellow;
 }
-a.inactive{
+nav a.inactive{
     color:green;
+    background: grey;
+}
+
+nav a {
+    border: 1px solid black;
+    background: darkseagreen;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
 }
