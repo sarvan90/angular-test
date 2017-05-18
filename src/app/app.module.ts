@@ -21,6 +21,7 @@ import { AnanthCompComponent } from './ananth-comp/ananth-comp.component';
 import { Layout1Component } from './layout1/layout1.component';
 
 import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
+import { HelperService } from './helper.service';
 
 
 const appRoutes: Routes = [
@@ -63,7 +64,7 @@ const appRoutes: Routes = [
     //RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules }),
     RouterModule.forRoot(appRoutes, { preloadingStrategy: SelectivePreloadingStrategyService })
   ],
-  providers: [ SelectivePreloadingStrategyService ],
+  providers: [ SelectivePreloadingStrategyService, HelperService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

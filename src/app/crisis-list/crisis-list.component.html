@@ -1,3 +1,19 @@
 <p>
   crisis-list works!
 </p>
+<label>General</label>
+<input #query type="text" (keyup)="searchDB(query.value)">
+<label>Intelligent</label>
+<input #term type="text" (keyup)="search(term.value)">
+<div class="box">
+<div *ngFor="let item of list">
+  {{item.name}}
+</div>
+{{errorMsg}}
+</div>
+<div class="box">
+<div *ngFor="let item of observableList | async">
+  {{item.name}}
+</div>
+{{errorMsg}}
+</div>
