@@ -11,6 +11,7 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class HelperService {
   private listUrl = 'http://localhost:3000/users';
+  private itemUrl = 'http://localhost:3000/items/'
   constructor(private http: Http) { }
 
   getList() {
@@ -24,6 +25,31 @@ export class HelperService {
                     .map(this.extractData)
                     .catch(this.handleError);;          
   }
+
+  getItems() {
+    return this.http.get(this.itemUrl)
+                    .map(this.extractData)
+                    .catch(this.handleError);;          
+  }
+
+  createItem(name: string) {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(this.itemUrl, { "name" : name }, options)
+                    .map(this.extractData)
+                    .catch(this.handleError);
+  }
+
+  updateItem(name: object) {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.put(this.itemUrl, name, options)
+                    .map(this.extractData)
+                    .catch(this.handleError);
+  }
+
 
   extractData(res){
     let body = res.json();
